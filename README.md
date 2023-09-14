@@ -1,4 +1,8 @@
 # StoryPoint
+
+![StoryPoint](/static/img/storypoint_flow.png)
+
+
 This repo contains the source code for the work **StoryPoint: A Data Story Authoring Tool for Enterprises**.
 
 In today’s data-driven world, enterprises are confronted with an exponential increase in data, requiring employees skilled in data
@@ -33,12 +37,14 @@ Due to the deployment process **there might be two problems** that don't occur w
     │   ├── 00_exploratory_data_analysis.py              # Data Exploration
     │   ├── 01_layout_creation.py                        # Story Composition
     │   ├── 02_create_visualizations.py                  # Story Narration
-    │   ├── 03_data_story.py                             # Final Data Story (dynamically generated inside of helper_functions.py)
+    │   ├── 03_data_story_1.py                             # Final Data Story (dynamically generated inside of helper_functions.py)
     ├── homepage.py             # Homepage that explains how the tool works 
     ├── README.md 
     ├── requirements.txt
 
 # How to Use
+Fill in youre OpenAI API key in the .streamlit/secrets.toml file.
+
 Navigate into the root folder of the app and inside the terminal type streamlit run .\homepage.py. Now the app should open up in your localhost.
 
 The app guides you through the creation of a data story and offers the following features:
@@ -51,6 +57,9 @@ The app guides you through the creation of a data story and offers the following
 - Get inspired by the automatically generated narrative elements that will correspond to the respective visualizations
 - View and Explore your finished data story with interactive filters, the AskData feature and the option for the viewer to provide Feedback
 
+### Example Scenario
+
+Sarah, a newly onboarded consultant at a boutique consulting firm, receives sales data from the client's Chief Sales Officer and is tasked to create an initial report, containing first important insights regarding sales until end of day. However, Sarah acknowledges her limited proficiency in data visualization techniques and utilizes *StoryPoint* to visualize the data. For **data exploration**, she uploads her data and *StoryPoint* automatically generates an exploratory data analysis report. She goes through the report and uncovers key insights of her dataset, such as how various columns are distributed and correlated. For **story composition**, she relies on these insights to create the first page of the data story. For that, she chose one of the page layouts that are provided by *StoryPoint*. If none of the page layouts fit her page, she could create a custom page layout.  Sarah's chosen layout accommodates two charts, vertically arranged, accompanied by narrative elements on the right-hand side. Next, in **story narration**, *StoryPoint* guides her through the creation of the charts and narrative elements of the first page. For chart creation, the tool offers two distinct modes: (1) natural language input, where she can articulate her requirements conversationally, or (2) example visualizations that serve as a springboard for her creativity. Sarah's creative process unfolds as she selects the second option for her first chart. She peruses a curated list of example visualizations and chooses one that vividly illustrates the total sales amount over time. Next, she refines the chart's appearance using the natural language input  *Add the dimension category to the chart and give each category a different color*. After careful inspection and iterative refinements, she achieves the desired result—an interconnected line chart that resonates with her analytical intentions. *StoryPoint* also equips her with various explanatory options for the chart. She opts for the description:  *This chart portrays the annual sales figures for three distinct categories: furniture, office supplies, and technology, spanning the years 2014 to 2017*. She augments the text with insights garnered during her exploration phase, adding a paragraph about the trends she observed in these categories from the exploratory data analysis report. Then she continues with the second chart. Her simple prompt, **Show the top 10 best-selling products per category as a bar chart* swiftly produces a chart that aligns with her expectations. She opts for *StoryPoints'* pre-generated narratives. To enhance the narrative's impact, she inserts a dynamic variable calculating the revenue, allowing for automatic updates. After creating both charts and descriptions, *StoryPoint* automatically creates potential story purposes that capture the content of the page. he selects the one that encapsulates her analytical objectives: *Analyzing Best Sellers and Sales Evolution: Insights from Top 10 Products and Category Performance over Time*. While the option to expand her narrative with additional pages exists, Sarah defers that decision for later. She concludes her work by saving the crafted data story and sending a link to her client. When accessing the data story, the client is presented with the opportunity to engage with the data through two distinct avenues: either by perusing the data story narrative or by utilizing *StoryPoint*s' Ask Data feature to pose natural language questions. Additionally, the client can opt to provide direct feedback to specific elements within the data story by simply clicking on them. This action triggers the appearance of a menu within the sidebar, offering the client the ability to assess the element using a star rating system or to furnish feedback in written form.
+
 ## Example
 ![Using the provided superstore sales dataset](/static/img/example_dashboard_1.png)
-
