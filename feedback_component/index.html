@@ -1,0 +1,173 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Bootstrap Modal at Absolute Position</title>
+  </head>
+  <style>
+    .center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* This will make the container fill the entire viewport height */
+  }
+    /* Define the base styles for the button */
+    .streamlit-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      background: linear-gradient(to bottom, #1A84C7, #495ae0);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    /* On hover, change the background to create a subtle effect */
+    .streamlit-button:hover {
+      background: linear-gradient(to bottom, #1A84C7, #364dc5);
+    }
+      #Layer_1 {
+    display: none;
+      }
+      #action {
+        visibility: hidden;
+      }
+      .custom-modal-dialog {
+      position: absolute;
+      top: 100px; /* Change this value to set the desired absolute top position */
+      left: 50%; /* Center the modal horizontally */
+      transform: translateX(-50%);
+      margin: 0; /* Reset margin to keep the modal centered */
+    }
+    body {
+      cursor: default; /* Set the default cursor style */
+      background-color: #F0F2F6; /* Replace this with the desired color code */
+
+    }
+    .custom-cursor {
+      cursor: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 512 512'%3e%3cg transform='rotate(45 256 256)'%3e%3crect id='r' x='16' y='216' width='480' height='80' rx='14'/%3e%3cuse href='%23r' transform='rotate(90 256 256)'/%3e%3c/g%3e%3c/svg%3e") 16 16, pointer;
+    }
+  </style>
+  <body>
+    <!-- Set up your HTML here -->
+    <div class="center-container">
+       <button class="streamlit-button" onclick="changeCursor()">Story Evaluation</button>
+    </div>
+
+    <!-- HTML code -->
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+        width="32px" height="32px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+    <polygon fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="bevel" stroke-miterlimit="10" points="1,30 63,1 23,41 
+      "/>
+    <polygon fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="bevel" stroke-miterlimit="10" points="34,63 63,1 23,41 
+      "/>
+    </svg>
+
+
+    <script>
+      // ----------------------------------------------------
+      // Just copy/paste these functions as-is:
+
+      function sendMessageToStreamlitClient(type, data) {
+        var outData = Object.assign({
+          isStreamlitMessage: true,
+          type: type,
+        }, data);
+        window.parent.postMessage(outData, "*");
+      }
+
+        function init() {
+          sendMessageToStreamlitClient("streamlit:componentReady", {apiVersion: 1});
+        }
+
+        function setFrameHeight(height) {
+          sendMessageToStreamlitClient("streamlit:setFrameHeight", {height: height});
+        }
+
+        // The `data` argument can be any JSON-serializable value.
+        function sendDataToPython(data) {
+          sendMessageToStreamlitClient("streamlit:setComponentValue", data);
+        }
+
+        // ----------------------------------------------------
+        // Now modify this part of the code to fit your needs:
+
+        var coordinatesArray = []; 
+        console.log(coordinatesArray)
+
+        // data is any JSON-serializable value you sent from Python,
+        // and it's already deserialized for you.
+        function onDataFromPython(event) {
+          if (event.data.type !== "streamlit:render") return;
+          number = event.data.args.my_input_value;  // Access values sent from Python here!
+        }
+        
+        // Hook things up!
+        window.addEventListener("message", onDataFromPython);
+        init();
+
+        // Optionally, if the automatic height computation fails you, give this component a height manually
+        // by commenting out below:
+        setFrameHeight(30);
+
+
+        // Function to handle the mouse click event
+        function handleClick(event) {
+        // Check if the current cursor style is not "default"
+        if (window.parent.document.body.style.cursor === 'url("data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'32\' height=\'32\' viewBox=\'0 0 512 512\'%3e%3cg transform=\'rotate(45 256 256)\'%3e%3crect id=\'r\' x=\'16\' y=\'216\' width=\'480\' height=\'80\' rx=\'14\'/%3e%3cuse href=\'%23r\' transform=\'rotate(90 256 256)\'/%3e%3c/g%3e%3c/svg%3e") 16 16, pointer') {
+          // Get the x and y coordinates of the mouse click
+          var x = event.clientX;
+          var y = event.clientY;
+          // Log the coordinates in the console
+          console.log('Mouse click at coordinates (x:', x, ', y:', y, ')');
+          // change back the cursor style to before
+          window.parent.document.body.style.cursor = ''
+          document.body.style.cursor = ''
+          // send back the data
+          sendDataToPython({
+            value: [true,{"x":x, "y": y}],
+            dataType: "json",
+          });
+          placeIconInParentDocument(x,y)
+        }
+      }
+
+        // Attach the click event listener to the document
+        window.parent.document.addEventListener('click', handleClick);
+
+
+        function changeCursor() {
+        // Check the current cursor style
+        const currentCursor = document.body.style.cursor;
+        // Change the cursor style based on the current style
+        if (currentCursor === 'default') {
+          document.body.style.cursor = 'crosshair'; // Change to a different built-in cursor style
+        } else {
+          window.parent.document.body.style.cursor = 'url("data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'32\' height=\'32\' viewBox=\'0 0 512 512\'%3e%3cg transform=\'rotate(45 256 256)\'%3e%3crect id=\'r\' x=\'16\' y=\'216\' width=\'480\' height=\'80\' rx=\'14\'/%3e%3cuse href=\'%23r\' transform=\'rotate(90 256 256)\'/%3e%3c/g%3e%3c/svg%3e") 16 16, pointer';
+          document.body.style.cursor = 'url("data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'32\' height=\'32\' viewBox=\'0 0 512 512\'%3e%3cg transform=\'rotate(45 256 256)\'%3e%3crect id=\'r\' x=\'16\' y=\'216\' width=\'480\' height=\'80\' rx=\'14\'/%3e%3cuse href=\'%23r\' transform=\'rotate(90 256 256)\'/%3e%3c/g%3e%3c/svg%3e") 16 16, pointer';
+        }
+      }
+        // This function will be called when the child iframe is fully loaded
+        function placeIconInParentDocument(x,y) {
+        const parentDocument = parent.window.document;
+        const icon = parentDocument.createElement('div');
+        icon.className = 'icon_feedback';
+        icon.style.top = `${y}px`
+        icon.style.left = `${x}px`
+        icon.id = "feedback_component_div"
+        // append the icon
+        const layer1Element = document.getElementById('Layer_1');
+        const layer1ElementCopy = layer1Element.cloneNode(true);
+        icon.appendChild(layer1ElementCopy);
+        // send it to parent document
+        parentDocument.body.appendChild(icon);
+        
+
+      }
+    </script>
+  </body>
+</html>

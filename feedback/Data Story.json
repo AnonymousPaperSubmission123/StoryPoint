@@ -1,0 +1,29 @@
+[
+    {
+        "category": "Layout",
+        "comment": "lk",
+        "rating": 1,
+        "position": {
+            "x": 986,
+            "y": 394
+        }
+    },
+    {
+        "category": "General",
+        "comment": "tur",
+        "rating": 3,
+        "position": {
+            "x": 1114,
+            "y": 401
+        }
+    },
+    {
+        "category": "General",
+        "comment": "Hier bitte in rot ",
+        "rating": 4,
+        "position": {
+            "x": 1032,
+            "y": 449
+        }
+    }
+]

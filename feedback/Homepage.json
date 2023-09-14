@@ -1,0 +1,116 @@
+[
+    {
+        "category": "General",
+        "comment": "dsafsdfasd",
+        "rating": 1
+    },
+    {
+        "category": "General",
+        "comment": "",
+        "rating": 1
+    },
+    {
+        "category": "General",
+        "comment": "",
+        "rating": 1
+    },
+    {
+        "category": "General",
+        "comment": "",
+        "rating": 1,
+        "position": {
+            "x": 444,
+            "y": 192
+        }
+    },
+    {
+        "category": "General",
+        "comment": "",
+        "rating": 1,
+        "position": {
+            "x": 1392,
+            "y": 637
+        }
+    },
+    {
+        "category": "General",
+        "comment": "",
+        "rating": 1,
+        "position": {
+            "x": 1224,
+            "y": 248
+        }
+    },
+    {
+        "category": "Layout",
+        "comment": "dfsdf",
+        "rating": 4,
+        "position": {
+            "x": 300,
+            "y": 364
+        }
+    },
+    {
+        "category": "General",
+        "comment": "",
+        "rating": 1,
+        "position": {
+            "x": 306,
+            "y": 305
+        }
+    },
+    {
+        "category": "General",
+        "comment": "",
+        "rating": 3,
+        "position": {
+            "x": 852,
+            "y": 319
+        }
+    },
+    {
+        "category": "General",
+        "comment": "gfsdgdfg",
+        "rating": 3,
+        "position": {
+            "x": 1120,
+            "y": 298
+        }
+    },
+    {
+        "category": "Layout",
+        "comment": "dfdfgc",
+        "rating": 3,
+        "position": {
+            "x": 644,
+            "y": 434
+        }
+    },
+    {
+        "category": "General",
+        "comment": "",
+        "rating": 1,
+        "position": {
+            "x": 564,
+            "y": 559
+        }
+    },
+    {
+        "category": "Layout",
+        "comment": "Zeilenabstand falsch",
+        "rating": 2,
+        "position": {
+            "x": 495,
+            "y": 355
+        }
+    },
+    {
+        "category": "General",
+        "comment": "richtig",
+        "rating": 5,
+        "position": {
+            "x": 712,
+            "y": 493
+        }
+    }
+]

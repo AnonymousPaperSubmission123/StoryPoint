@@ -1,0 +1,4 @@
+node_modules/
+VegaSpecs
+data/Test the Data.ipynb
+pages/02_create_visualizations.py
