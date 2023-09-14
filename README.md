@@ -17,8 +17,8 @@ The code uses python 3.9.13 and Streamlit 1.23.1. The full dependency can be fou
 After that, follow the installation from [this Readme](https://github.com/DenizD/Streamlit-Image-Carousel) and navigate to the frontend directory to initialize npm and subsequently install the node modules.
 
 ## Live Demo
-A running live demo can be found here.
-Due to the deployment process there might be two problems that don't occur when running the porject localy:
+A running live demo can be found [here](https://storypoint.streamlit.app/).
+Due to the deployment process **there might be two problems** that don't occur when running the porject localy:
 - problem with MultiVision package: we noticed that unconventional graphical representations may be generated
 - problem with the API quota: Because the app is now public, we limited the API quota to 10$ per month. If the quota is exceeded, the LLM functions won't work anymore.
 

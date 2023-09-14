@@ -299,7 +299,7 @@ def main():
         unsafe_allow_html=True,
     )
 
-    st.image("static/img/Story_Explanation/Folie1.PNG")
+    st.image("static/img/Story_Explanation/Folie1.png")
 
     # switch to the layout configurator page
     start_process = st.button("Build a Data Story!")
