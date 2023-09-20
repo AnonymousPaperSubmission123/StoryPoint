@@ -1080,7 +1080,7 @@ def main():
                             - Use *FeatureX* as a color gradient
                             - Make it a Scatterplot instead
                             - Use timeUnit year --> only shows year on xaxis without months
-                            - to group a bar chart, use xOffset attribute
+                            - to group a bar chart, prompt: use 'xOffset':{'field':'<grouping field>'} within encoding
                             - make the information hoverable by including variables into the tooltip
                             - use aggregate by mean to get mean values for an axis
                             - use transform calculation to calculate the deaths divided by population 
