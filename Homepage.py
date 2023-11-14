@@ -210,6 +210,8 @@ def main():
     Returns:
         None
     """
+    # initialize a session state for the adjust mode in the data story
+    st.session_state["adjust_mode"] = False
 
     # call the style function to apply the styles
     style()

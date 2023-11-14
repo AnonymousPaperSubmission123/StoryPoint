@@ -626,6 +626,9 @@ class GPTHelper:
                     Returns:
                         None
                     """
+                    # go to adjustment page
+                    if st.session_state["adjust_mode"] == True:
+                        switch_page("adjust_story")
 
                     # call the style function to apply the styles
                     style()
@@ -645,6 +648,10 @@ class GPTHelper:
                         add_logo("static/img/chi_logo.png", height=30)
                                     
                     # fullscreen button
+                    with st.sidebar:
+                        if st.button("Adjust Story"):
+                            st.session_state["adjust_mode"] = True
+
                     with st.sidebar:
                         tog.st_toggle_switch(label="Fullscreen", 
                         key="fullscreen_toggle", 
@@ -1147,6 +1154,10 @@ class GPTHelper:
                         Returns:
                             None
                         """
+                        # go to adjustment page
+                        if st.session_state["adjust_mode"] == True:
+                            switch_page("adjust_story")
+
 
                         # call the style function to apply the styles
                         style()
@@ -1166,6 +1177,9 @@ class GPTHelper:
                             add_logo("static/img/chi_logo.png", height=30)
                                         
                         # fullscreen button
+                        with st.sidebar:
+                            if st.button("Adjust Story"):
+                                st.session_state["adjust_mode"] = True
                         with st.sidebar:
                             tog.st_toggle_switch(label="Fullscreen", 
                             key="fullscreen_toggle", 
