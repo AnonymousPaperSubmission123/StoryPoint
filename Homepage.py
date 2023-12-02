@@ -212,6 +212,10 @@ def main():
     """
     # initialize a session state for the adjust mode in the data story
     st.session_state["adjust_mode"] = False
+    st.session_state["page_1_title"] = "Page 1"
+    st.session_state["page_2_title"] = "Page 2"
+    st.session_state["page_3_title"] = "Page 3"
+
 
     # call the style function to apply the styles
     style()
