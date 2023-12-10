@@ -1206,6 +1206,7 @@ def main():
                 placeholder="The plot shows...",
                 value=chart_description,
             )
+            st.warning("Automatically generated content. Please proofread.")
         else:
             # Use My Self Made Custom Component
             graph_explanation = st_pandas_text_editor(
@@ -1214,6 +1215,7 @@ def main():
                 placeholder="The plot shows...",
                 value=chart_description,
             )
+            st.warning("Automatically generated content. Please proofread.")
         if graph_explanation:
             if f"graph_{current_graph}_confirmed" not in st.session_state:
                 st.session_state[f"graph_{current_graph}_confirmed"] = True
@@ -1276,6 +1278,7 @@ def main():
                             f"story_purpose_gpt_{current_page}"
                         ],
                     )
+                    st.warning("Automatically generated content. Please proofread.")
                 else:
                     # Use My Self Made Custom Component
                     story_purpose = st_pandas_text_editor(
@@ -1286,6 +1289,7 @@ def main():
                             f"story_purpose_gpt_{current_page}"
                         ],
                     )
+                    st.warning("Automatically generated content. Please proofread.")
 
                 if story_purpose:
                     st.session_state[f"story_{current_page}_confirmed"] = True
@@ -1385,6 +1389,7 @@ def main():
                                 f"story_purpose_gpt_{current_page}"
                             ],
                         )
+                        st.warning("Automatically generated content. Please proofread.")
                     else:
                         # Use My Self Made Custom Component
                         story_purpose = st_pandas_text_editor(
@@ -1395,7 +1400,8 @@ def main():
                                 f"story_purpose_gpt_{current_page}"
                             ],
                         )
-
+                        st.warning("Automatically generated content. Please proofread.")
+                        
                     if story_purpose:
                         st.session_state[
                             f"story_{current_page}_confirmed"
