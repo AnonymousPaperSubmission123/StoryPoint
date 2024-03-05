@@ -643,9 +643,6 @@ class GPTHelper:
                     # unfiltered dataframe so the filter boundaries arent adjusted
                     df_slider = st.session_state["raw_data_unfiltered"]
 
-                    # add page logo to sidebar
-                    with st.sidebar:
-                        add_logo("static/img/chi_logo.png", height=30)
                                     
                     # fullscreen button
                     with st.sidebar:
@@ -1172,9 +1169,6 @@ class GPTHelper:
                         # unfiltered dataframe so the filter boundaries arent adjusted
                         df_slider = st.session_state["raw_data_unfiltered"]
 
-                        # add page logo to sidebar
-                        with st.sidebar:
-                            add_logo("static/img/chi_logo.png", height=30)
                                         
                         # fullscreen button
                         with st.sidebar:

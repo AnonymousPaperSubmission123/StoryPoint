@@ -220,10 +220,6 @@ def main():
     # call the style function to apply the styles
     style()
 
-    # add page logo to sidebar
-    with st.sidebar:
-        add_logo("static/img/chi_logo.png", height=30)
-
     # create a container to place in sticky header content
     header = st.container()
     with header:

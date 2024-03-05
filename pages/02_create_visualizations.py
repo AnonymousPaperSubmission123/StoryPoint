@@ -595,9 +595,6 @@ def main():
     # streamlit graph counter
     current_graph = graph_counter()
 
-    # add page logo to sidebar
-    with st.sidebar:
-        add_logo("static/img/chi_logo.png", height=30)
 
     st.sidebar.write("### Your Dataset contains the following features")
     with st.sidebar.expander("Dataset Features", expanded=True):
@@ -1528,9 +1525,6 @@ def finished_data_story():
     # call the style function to apply the styles
     style()
 
-    # add page logo to sidebar
-    with st.sidebar:
-        add_logo("static/img/chi_logo.png", height=30)
 
     st.subheader(
         "The data story has been created and can be found under the Data Story Tab"

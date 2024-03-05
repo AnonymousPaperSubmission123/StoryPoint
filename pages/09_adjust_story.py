@@ -352,10 +352,6 @@ def main():
             column_names=df.columns.tolist(),
         )
 
-    # add page logo to sidebar
-    with st.sidebar:
-        add_logo("static/img/chi_logo.png", height=30)
-
     # page title
     st.title("Data Story Authoring Tool - Adjustment Page")
 
