@@ -3,17 +3,22 @@
 ![StoryPoint](/static/img/storypoint_flow.png)
 
 
-This repo contains the source code for the work **StoryPoint: A Data Story Authoring Tool for Enterprises**.
+This repo contains the source code for the work **StoryPoint: A Data Story Authoring Tool for Domain Experts**.
 
-In today’s data-driven world, enterprises are confronted with an exponential increase in data, requiring employees skilled in data
-visualization. Simultaneously, data storytelling as an effective means of communicating data-driven insights is on the rise. However,
-current data visualization tools offer little assistance in crafting compelling data stories, underscoring the need for innovative authoring
-tools. This paper introduces StoryPoint, a data story authoring tool tailored for domain experts in enterprises. By empowering
-domain experts with the ability to intuitively visualize data through natural language inputs alongside pre-calculated charts and
-narrative elements, the bridge between data visualization and its interpretation can be narrowed. To design StoryPoint, we followed a
-user-centered and literature-supported approach. A formative evaluation involving eight domain experts reveals StoryPoint’s efficacy
-in rapid data story prototyping. A summative evaluation with three additional domain experts, encompassing real-world industry data
-visualization cases, underscores StoryPoint’s utility.
+In today’s data-driven world, large amounts of data holding tremendous potential are collected. While data storytelling
+proves integral for communicating insights, existing authoring tools fall short in meeting the nuanced needs of domain experts with
+intricate use cases in business and society. This paper introduces StoryPoint, an open-source data story authoring tool tailored for
+domain experts. By empowering domain experts with the ability to intuitively visualize data through natural language inputs alongside
+pre-calculated charts and narrative elements, the gap between data visualization and its interpretation can be narrowed. To design
+StoryPoint, we followed a literature-grounded and user-centered design approach. A formative evaluation involving eight domain
+experts reveals StoryPoint’s efficacy in rapid data story prototyping. The summative evaluation including (i) a small-scale experiment
+comparing StoryPoint with a benchmark using eight domain experts, (ii) a large-scale online experiment with 104 crowdworkers
+assessing StoryPoint’s data story quality, and (iii) three real-world data visualization cases, emphasizes StoryPoint’s utility. StoryPoint
+is open source and can be accessed on GitHub.
+
+## Demo Video
+
+
 
 ## How to Install
 The code uses python 3.9.13 and Streamlit 1.23.1. The full dependency can be found and installed via requirements.txt.
