@@ -530,10 +530,10 @@ def main():
             "StoryPoint",
             [
                 "Homepage",
-                "Data Exploration",
-                "Story Composition",
-                "Story Narration",
-                "Data Story",
+                "Analysis",
+                "Planning",
+                "Implementation",
+                "Communication",
             ],
             icons=[
                 "house",
@@ -573,13 +573,13 @@ def main():
         if "homepage-menu" in st.session_state:
             del st.session_state["homepage-menu"]
         # handle the option that got chosen in the navigation bar
-        if choose == "Data Exploration":
+        if choose == "Analysis":
             switch_page("Exploratory Data Analysis")
-        elif choose == "Story Composition":
+        elif choose == "Planning":
             switch_page("Layout Creation")
         elif choose == "Homepage":
             switch_page("Homepage")
-        elif choose == "Data Story":
+        elif choose == "Communication":
             switch_page("Data Story 1")
         st.write("""<div class='fixed-header'/>""", unsafe_allow_html=True)
 
@@ -1469,10 +1469,10 @@ def finished_data_story():
             "StoryPoint",
             [
                 "Homepage",
-                "Data Exploration",
-                "Story Composition",
-                "Story Narration",
-                "Data Story",
+                "Analysis",
+                "Planning",
+                "Implementation",
+                "Communication",
             ],
             icons=[
                 "house",
@@ -1512,13 +1512,13 @@ def finished_data_story():
         if "homepage-menu" in st.session_state:
             del st.session_state["homepage-menu"]
         # handle the option that got chosen in the navigation bar
-        if choose == "Data Exploration":
+        if choose == "Analysis":
             switch_page("Exploratory Data Analysis")
-        elif choose == "Story Composition":
+        elif choose == "Planning":
             switch_page("Layout Creation")
         elif choose == "Homepage":
             switch_page("Homepage")
-        elif choose == "Data Story":
+        elif choose == "Communication":
             switch_page("Data Story 1")
         st.write("""<div class='fixed-header'/>""", unsafe_allow_html=True)
 

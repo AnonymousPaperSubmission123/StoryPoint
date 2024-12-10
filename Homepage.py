@@ -228,10 +228,10 @@ def main():
             "StoryPoint",
             [
                 "Homepage",
-                "Data Exploration",
-                "Story Composition",
-                "Story Narration",
-                "Data Story",
+                "Analysis",
+                "Planning",
+                "Implementation",
+                "Communication",
             ],
             icons=[
                 "house",
@@ -271,13 +271,13 @@ def main():
         if "visualization-menu" in st.session_state:
             del st.session_state["visualization-menu"]
         # handle the option that got chosen in the navigation bar
-        if choose == "Data Exploration":
+        if choose == "Analysis":
             switch_page("Exploratory Data Analysis")
-        elif choose == "Story Composition":
+        elif choose == "Planning":
             switch_page("Layout Creation")
-        elif choose == "Story Narration":
+        elif choose == "Implementation":
             switch_page("Create Visualizations")
-        elif choose == "Data Story":
+        elif choose == "Communication":
             switch_page("Data Story 1")
         st.write("""<div class='fixed-header'/>""", unsafe_allow_html=True)
 
@@ -291,9 +291,9 @@ def main():
         The tool will guide you through three different stages before you complete \
         your data story:</p>
             <ul>
-        <li><span class="bold">Data Exploration</span> - Select the dataset that you want to work with and view the Exploratory Data Analysis</li>
-        <li><span class="bold">Story Composition</span> - Choose the number of pages and the layout for each page</li>
-        <li><span class="bold">Story Narration</span> - Create the visualizations and two types of explanation text: (1) A story purpose
+        <li><span class="bold">Analysis</span> - Select the dataset that you want to work with and view the Exploratory Data Analysis</li>
+        <li><span class="bold">Planning</span> - Choose the number of pages and the layout for each page</li>
+        <li><span class="bold">Implementation</span> - Create the visualizations and two types of explanation text: (1) A story purpose
         that will be displayed on the top of the page and (2) Chart explanations for each visualization</li>
     </ul>
     <p>After these steps, you can view the finished Data Story. See below for an example story:</p>

@@ -199,10 +199,10 @@ def main():
             "StoryPoint",
             [
                 "Homepage",
-                "Data Exploration",
-                "Story Composition",
-                "Story Narration",
-                "Data Story",
+                "Analysis",
+                "Planning",
+                "Implementation",
+                "Communication",
             ],
             icons=[
                 "house",
@@ -241,11 +241,11 @@ def main():
         if "visualization-menu" in st.session_state:
             del st.session_state["visualization-menu"]
         # handle the option that got chosen in the navigation bar
-        elif choose_exploration == "Story Composition":
+        elif choose_exploration == "Planning":
             switch_page("Layout Creation")
-        elif choose_exploration == "Story Narration":
+        elif choose_exploration == "Implementation":
             switch_page("Create Visualizations")
-        elif choose_exploration == "Data Story":
+        elif choose_exploration == "Communication":
             switch_page("Data Story 1")
         elif choose_exploration == "Homepage":
             switch_page("Homepage")
@@ -410,7 +410,10 @@ def main():
         profile = get_dataset_profile_report(df)
         st_profile_report(profile)
 
-        eda_finished = st.button("EDA finished")
+        st.subheader("3️⃣(Optional) Data Story Context")
+        st.text_area(placeholder="Explain the purpose of your data story and give additional input. This will help the model to make better customizations.", label="(Optional) Define the context for your Data Story")
+
+        eda_finished = st.button("Proceed to Planning")
         if eda_finished:
             # check whether all layouts have been chose
             switch_page("layout creation")

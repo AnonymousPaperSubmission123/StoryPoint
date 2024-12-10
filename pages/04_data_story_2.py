@@ -292,7 +292,6 @@ def main():
     if st.session_state["adjust_mode"] == True:
         switch_page("adjust_story")
 
-
     # call the style function to apply the styles
     style()
 
@@ -311,6 +310,7 @@ def main():
     with st.sidebar:
         if st.button("Adjust Story"):
             st.session_state["adjust_mode"] = True
+
     with st.sidebar:
         tog.st_toggle_switch(label="Fullscreen", 
         key="fullscreen_toggle", 
@@ -339,10 +339,10 @@ def main():
                 # increase counter for number filters
                 num_number_filters.append(i)
                 st.slider(
-            min_value=float(df_slider[filter].min()),
-            value=(float(df_slider[filter].min()), float(df_slider[filter].max())),
+                    min_value=float(df_slider[filter].min()),
+                    value=(float(df_slider[filter].min()), float(df_slider[filter].max())),
                     label=f"{filter} Range Slider",
-                    help="Select a Range of values. Only raw data that lies in                                        between that range will now be considered for the visualizations.",
+                    help="Select a Range of values. Only raw data that lies in                                    between that range will now be considered for the visualizations.",
                     args=(i, filter, num_total_filters),
                     on_change=handle_slider_filter_change,
                     key=f"filter_{i}",
@@ -441,7 +441,7 @@ def main():
             st.write("""<div class='fixed-header'/>""", unsafe_allow_html=True)
 
             # use the breadcrumbs to navigate through the created data story
-            breadcrumb_html = gpt_helper.breadcrumbs(current_url="data story 1")
+            breadcrumb_html = gpt_helper.breadcrumbs(current_url="data story 2")
             # display the breadcrumbs
             st.components.v1.html(breadcrumb_html, height=80)
 
@@ -451,42 +451,41 @@ def main():
     # The data Story content
     # Story purpose
     st.markdown(
-        eval(f'f"""{st.session_state[f"story_purpose_1_text"]}"""'),
+        eval(f'f"""{st.session_state[f"story_purpose_2_text"]}"""'),
         unsafe_allow_html=True,
     )
 
     # first visualization and text
-    c1, c2 = st.columns([3, 3])
+    c1, c2 = st.columns([4, 3])
 
     with c1:
         st.vega_lite_chart(
             height=350,
             data=df,
-            spec=st.session_state["fig_gpt_1"],
+            spec=st.session_state["fig_gpt_3"],
             use_container_width=True,
         )
 
     with c2:
-        st.vega_lite_chart(
-            height=350,
-            data=df,
-            spec=st.session_state["fig_gpt_2"],
-            use_container_width=True,
-        )
-
-    # second chart and text
-    col1, col2 = st.columns([3, 3])
-
-    with col1:
         st.markdown(
-            eval(f'f"""{st.session_state[f"graph_1_text"]}"""'),
+            eval(f'f"""{st.session_state[f"graph_3_text"]}"""'),
             unsafe_allow_html=True,
         )
 
+    # second chart and text
+    col1, col2 = st.columns([4, 3])
+
+    with col1:
+        st.vega_lite_chart(
+            height=350,
+            data=df,
+            spec=st.session_state["fig_gpt_4"],
+            use_container_width=True,
+        )
 
     with col2:
         st.markdown(
-            eval(f'f"""{st.session_state[f"graph_2_text"]}"""'),
+            eval(f'f"""{st.session_state[f"graph_4_text"]}"""'),
             unsafe_allow_html=True,
         )
 
